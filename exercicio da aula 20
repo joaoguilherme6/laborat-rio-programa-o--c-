@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+typedef struct {
+    char nome[50];
+    int idade;
+    float salario;
+} Funcionario;
+
+int main() {
+
+    Funcionario funcionario1, funcionario2;
+
+    // Cadastro do primeiro funcionário
+    printf("=== CADASTRO DE FUNCIONARIOS ===\n\n");
+
+    printf("Digite o nome do primeiro funcionario: ");
+    scanf(" %49[^\n]", funcionario1.nome);
+
+    printf("Digite a idade do primeiro funcionario: ");
+    scanf("%d", &funcionario1.idade);
+
+    printf("Digite o salario do primeiro funcionario: R$ ");
+    scanf("%f", &funcionario1.salario);
+
+    // Cadastro do segundo funcionário
+    printf("\nDigite o nome do segundo funcionario: ");
+    scanf(" %49[^\n]", funcionario2.nome);
+
+    printf("Digite a idade do segundo funcionario: ");
+    scanf("%d", &funcionario2.idade);
+
+    printf("Digite o salario do segundo funcionario: R$ ");
+    scanf("%f", &funcionario2.salario);
+
+    // Apresentação dos dados cadastrados
+    printf("\n===== DADOS DOS FUNCIONARIOS =====\n");
+
+    printf("\nFuncionario 1:\n");
+    printf("Nome: %s\n", funcionario1.nome);
+    printf("Idade: %d anos\n", funcionario1.idade);
+    printf("Salario: R$ %.2f\n", funcionario1.salario);
+
+    printf("\nFuncionario 2:\n");
+    printf("Nome: %s\n", funcionario2.nome);
+    printf("Idade: %d anos\n", funcionario2.idade);
+    printf("Salario: R$ %.2f\n", funcionario2.salario);
+
+    // Comparação dos salários
+    printf("\n===== COMPARACAO SALARIAL =====\n");
+
+    if (funcionario1.salario > funcionario2.salario) {
+
+        printf("\nO funcionario com maior salario e: %s\n",
+               funcionario1.nome);
+
+        printf("Salario: R$ %.2f\n", funcionario1.salario);
+
+        printf("Diferenca salarial: R$ %.2f\n",
+               funcionario1.salario - funcionario2.salario);
+
+    } 
+    else if (funcionario2.salario > funcionario1.salario) {
+
+        printf("\nO funcionario com maior salario e: %s\n",
+               funcionario2.nome);
+
+        printf("Salario: R$ %.2f\n", funcionario2.salario);
+
+        printf("Diferenca salarial: R$ %.2f\n",
+               funcionario2.salario - funcionario1.salario);
+
+    } 
+    else {
+
+        printf("\nOs dois funcionarios recebem o mesmo salario.\n");
+
+        printf("Salario: R$ %.2f\n", funcionario1.salario);
+
+        printf("Diferenca salarial: R$ 0.00\n");
+    }
+
+    return 0;
+}
